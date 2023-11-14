@@ -24,8 +24,12 @@ public class Game {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
-	private String longDesription;
+
+	@Column(columnDefinition = "TEXT")
+	private String longDescription;
 
 	public Game() {
 
@@ -42,7 +46,7 @@ public class Game {
 		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
-		this.longDesription = longDesription;
+		this.longDescription = longDesription;
 	}
 
 	public Long getId() {
@@ -110,11 +114,11 @@ public class Game {
 	}
 
 	public String getLongDesription() {
-		return longDesription;
+		return longDescription;
 	}
 
 	public void setLongDesription(String longDesription) {
-		this.longDesription = longDesription;
+		this.longDescription = longDesription;
 	}
 
 	@Override
