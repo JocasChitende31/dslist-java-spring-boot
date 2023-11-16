@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.atendestartup.dslist.dto.GameDTO;
 import com.atendestartup.dslist.dto.GameMinDTO;
 import com.atendestartup.dslist.entities.Game;
+import com.atendestartup.dslist.projections.GameMinProjection;
 import com.atendestartup.dslist.repositories.GameRepository;
 
 // This GameServices is class that deal with or 
@@ -37,4 +38,13 @@ public class GamesServices {
 		List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
 		return dto;
 	}
+
+	@Transactional(readOnly = true)
+	public List<GameMinDTO> findByList(Long listId) {
+		List<GameMinProjection> result = gameRepository.searchById(listId);
+		List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
+		return dto;
+		
+	}
+
 }

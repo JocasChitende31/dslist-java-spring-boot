@@ -4,8 +4,6 @@ import org.springframework.beans.BeanUtils;
 
 import com.atendestartup.dslist.entities.Game;
 
-import jakarta.persistence.Column;
-
 public class GameDTO {
 
 	private Long id;
@@ -15,9 +13,7 @@ public class GameDTO {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
-	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
-	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 
 	public GameDTO() {

@@ -1,6 +1,7 @@
 package com.atendestartup.dslist.dto;
 
 import com.atendestartup.dslist.entities.Game;
+import com.atendestartup.dslist.projections.GameMinProjection;
 
 // DTO=> Data Transfer Object, Class that display a minor quantities of data from Game class but not from database. 
 public class GameMinDTO {
@@ -23,6 +24,12 @@ public class GameMinDTO {
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
 
+	}
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		shortDescription = projection.getShortDescription();
 	}
 
 	public Long getId() {
